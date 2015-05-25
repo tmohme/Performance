@@ -1,0 +1,14 @@
+plugins {
+  id 'application'
+  id 'eclipse'
+}
+
+mainClassName = 'ByteSum'
+
+run {
+  maxHeapSize '50m'
+  jvmArgs '-XX:+UnlockCommercialFeatures',
+          '-XX:+FlightRecorder',
+          '-XX:-PrintCompilation',
+          '-XX:CompileThreshold=100'
+}

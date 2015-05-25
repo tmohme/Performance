@@ -1,0 +1,11 @@
+plugins {
+  id 'application'
+  id 'eclipse'
+}
+
+mainClassName = 'Primes'
+
+run {
+  jvmArgs '-XX:+UnlockCommercialFeatures',
+          '-XX:+FlightRecorder'
+}
