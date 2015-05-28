@@ -1,3 +1,4 @@
+drop table if exists voucher;
 create table voucher (
     id int identity,
     code varchar(6),
