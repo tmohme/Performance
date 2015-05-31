@@ -1,11 +1,8 @@
 plugins {
-  id 'application'
-  id 'eclipse'
+  id 'java'
 }
 
 sourceCompatibility = 1.8
-
-mainClassName = 'Main'
 
 repositories {
   mavenCentral()
@@ -29,29 +26,8 @@ dependencies {
   testCompile 'junit:junit:4.11'
 }
 
-task startDb(type: JavaExec) {
-  main = 'org.h2.tools.Server'
-  classpath = sourceSets.main.runtimeClasspath
-  args '-tcp', '-tcpDaemon'
-}
-
-task stopDb(type: JavaExec) {
-  main = 'org.h2.tools.Server'
-  classpath = sourceSets.main.runtimeClasspath
-  args '-tcpShutdown', 'tcp://localhost:9092'
-}
-
 test {
   outputs.upToDateWhen{false}
   jvmArgs '-XX:+UnlockCommercialFeatures',
           '-XX:+FlightRecorder'
 }
-
-run {
-  jvmArgs '-XX:+UnlockCommercialFeatures',
-          '-XX:+FlightRecorder'
-
-  dependsOn startDb
-  finalizedBy stopDb
-}
-
