@@ -105,6 +105,3 @@ A nice online calculator for Queuing problems can be found [here][supositorio]. 
 [RiaTM]: https://www.youtube.com/watch?v=q_DCipkMsy0
 [MmH]: https://www.youtube.com/watch?v=MC1EKLQ2Wmg
 [supositorio]: http://www.supositorio.com/rcalc/rcalclite.htm
- 
--Some samples to demonstrate how poorly written code manifests itself in measuring tools.
-\ No newline at end of file
