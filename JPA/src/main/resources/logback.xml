@@ -6,7 +6,7 @@
     </appender>
 
     <logger name="org.hibernate" level="error"/>
-    <logger name="org.hibernate.stat" level="error"/>
+    <logger name="org.hibernate.engine.internal.StatisticalLoggingSessionEventListener" level="error"/>
     <logger name="org.hibernate.SQL" level="error"/>
     <logger name="org.hibernate.type" level="error"/>
 

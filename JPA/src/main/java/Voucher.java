@@ -8,8 +8,7 @@ public class Voucher {
   public static final String VOUCHER_BY_CODE = "VoucherByCode";
 
   @Id
-  @SequenceGenerator(name="voucher_seq", sequenceName="voucher_seq", allocationSize = 1)
-  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "voucher_seq")
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
 
   private String code;
