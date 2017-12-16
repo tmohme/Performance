@@ -8,4 +8,5 @@ mainClassName = 'Primes'
 run {
   jvmArgs '-XX:+UnlockCommercialFeatures',
           '-XX:+FlightRecorder'
+//        , '-XX:StartFlightRecording=delay=20s,duration=10s,filename=myrecording.jfr'
 }

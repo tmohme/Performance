@@ -1,0 +1,43 @@
+original:
+mohmet@pc3211su:~/wsTest/ByteSum> perf stat -c /usr/java/jdk1.8.0_40/bin/java -cp bin ByteSum
+duration = 101745,9ms, sum = 1030096000000
+
+ Performance counter stats for '/usr/java/jdk1.8.0_40/bin/java -cp bin ByteSum':
+
+     101787,755472 task-clock                #    1,000 CPUs utilized          
+            12.840 context-switches          #    0,126 K/sec                  
+               197 cpu-migrations            #    0,002 K/sec                  
+             5.131 page-faults               #    0,050 K/sec                  
+   335.352.620.119 cycles                    #    3,295 GHz                    
+   171.293.933.945 stalled-cycles-frontend   #   51,08% frontend cycles idle   
+   156.610.446.858 stalled-cycles-backend    #   46,70% backend  cycles idle   
+   185.074.688.936 instructions              #    0,55  insns per cycle        
+                                             #    0,93  stalled cycles per insn
+    53.388.378.058 branches                  #  524,507 M/sec                  
+    12.440.941.128 branch-misses             #   23,30% of all branches        
+
+     101,828651913 seconds time elapsed
+
+
+
+
+verbessert:
+mohmet@pc3211su:~/wsTest/ByteSum> perf stat -c /usr/java/jdk1.8.0_40/bin/java -cp bin ByteSum
+duration = 25779,6ms, sum = 1038494000000
+
+ Performance counter stats for '/usr/java/jdk1.8.0_40/bin/java -cp bin ByteSum':
+
+      25879,775019 task-clock                #    1,001 CPUs utilized          
+             3.551 context-switches          #    0,137 K/sec                  
+               133 cpu-migrations            #    0,005 K/sec                  
+             5.066 page-faults               #    0,196 K/sec                  
+    86.391.107.770 cycles                    #    3,338 GHz                    
+    21.804.300.569 stalled-cycles-frontend   #   25,24% frontend cycles idle   
+     5.489.065.855 stalled-cycles-backend    #    6,35% backend  cycles idle   
+   184.853.257.989 instructions              #    2,14  insns per cycle        
+                                             #    0,12  stalled cycles per insn
+    53.365.656.445 branches                  # 2062,060 M/sec                  
+         4.941.737 branch-misses             #    0,01% of all branches        
+
+      25,865443251 seconds time elapsed
+

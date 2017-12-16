@@ -1,0 +1,51 @@
+original:
+mohmet@pc3211su:/usr/java/jdk1.8.0_40> perf stat -c -d bin/java -cp ~/wsTest/Primes/bin Primes
+Last prime = 32452843
+Total time = 53.275
+
+ Performance counter stats for 'bin/java -cp /home/mohmet/wsTest/Primes/bin Primes':
+
+      53416,804649 task-clock                #    1,002 CPUs utilized          
+            21.907 context-switches          #    0,410 K/sec                  
+             6.677 cpu-migrations            #    0,125 K/sec                  
+             6.720 page-faults               #    0,126 K/sec                  
+   176.420.787.502 cycles                    #    3,303 GHz                    
+    41.275.607.964 stalled-cycles-frontend   #   23,40% frontend cycles idle   
+    10.826.292.713 stalled-cycles-backend    #    6,14% backend  cycles idle   
+   334.315.881.345 instructions              #    1,89  insns per cycle        
+                                             #    0,12  stalled cycles per insn
+    74.445.307.443 branches                  # 1393,668 M/sec                  
+        31.606.789 branch-misses             #    0,04% of all branches        
+                 0 L1-dcache-loads           #    0,000 K/sec                  
+     2.319.945.839 L1-dcache-load-misses     #    0,00% of all L1-dcache hits  
+       757.743.402 LLC-loads                 #   14,185 M/sec                  
+   <not supported> LLC-load-misses:HG      
+
+      53,331037695 seconds time elapsed
+
+
+
+verbessert:
+mohmet@pc3211su:/usr/java/jdk1.8.0_40> perf stat -c -d bin/java -cp ~/wsTest/Primes/bin Primes
+Last prime = 32452843
+Total time = 39.434
+
+ Performance counter stats for 'bin/java -cp /home/mohmet/wsTest/Primes/bin Primes':
+
+      39470,764195 task-clock                #    1,000 CPUs utilized          
+             5.121 context-switches          #    0,130 K/sec                  
+                60 cpu-migrations            #    0,002 K/sec                  
+             4.688 page-faults               #    0,119 K/sec                  
+   131.561.987.666 cycles                    #    3,333 GHz                    
+    91.244.006.688 stalled-cycles-frontend   #   69,35% frontend cycles idle   
+    31.897.901.607 stalled-cycles-backend    #   24,25% backend  cycles idle   
+   105.380.755.686 instructions              #    0,80  insns per cycle        
+                                             #    0,87  stalled cycles per insn
+    30.367.362.801 branches                  #  769,363 M/sec                  
+        16.680.142 branch-misses             #    0,05% of all branches        
+                 0 L1-dcache-loads           #    0,000 K/sec                  
+         3.859.679 L1-dcache-load-misses     #    0,00% of all L1-dcache hits  
+         1.360.934 LLC-loads                 #    0,034 M/sec                  
+   <not supported> LLC-load-misses:HG      
+
+      39,489343713 seconds time elapsed
