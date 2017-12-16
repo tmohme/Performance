@@ -9,3 +9,6 @@ create table voucher (
     updatedBy varchar,
     updatedAt timestamp
 );
+
+drop sequence if exists voucher_seq;
+create sequence voucher_seq;

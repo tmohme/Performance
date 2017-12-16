@@ -1,17 +1,15 @@
-import org.hibernate.annotations.DynamicInsert;
-
 import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
 @Table(name = "voucher")
 @NamedQuery(name = Voucher.VOUCHER_BY_CODE, query = "from Voucher where code = :code")
-//@DynamicInsert
 public class Voucher {
   public static final String VOUCHER_BY_CODE = "VoucherByCode";
 
   @Id
-  @GeneratedValue
+  @SequenceGenerator(name="voucher_seq", sequenceName="voucher_seq", allocationSize = 1)
+  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "voucher_seq")
   private Integer id;
 
   private String code;
