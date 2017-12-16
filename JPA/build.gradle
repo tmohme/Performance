@@ -1,5 +1,5 @@
 plugins {
-  id 'java'
+  id 'application'
 }
 
 sourceCompatibility = 1.8
@@ -28,6 +28,12 @@ dependencies {
 
 test {
   outputs.upToDateWhen{false}
+  jvmArgs '-XX:+UnlockCommercialFeatures',
+          '-XX:+FlightRecorder'
+}
+
+mainClassName = 'Main'
+run {
   jvmArgs '-XX:+UnlockCommercialFeatures',
           '-XX:+FlightRecorder'
 }
